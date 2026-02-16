@@ -83,3 +83,20 @@ To enable real package payments in the app:
 4. Restart the dev server.
 
 When the app receives `payment=success` and `packageId`, it credits the purchased package automatically.
+
+## GitHub Upload (Windows)
+
+Use the secure script `upload-to-github.ps1` (no hardcoded token).
+
+```powershell
+$env:GITHUB_USERNAME='your_github_user'
+$env:GITHUB_REPO='your_repo_name'
+$env:GITHUB_TOKEN='your_new_pat'   # optional if Git credentials are already saved
+.\upload-to-github.ps1
+```
+
+If script execution is blocked, run this first in the same terminal session:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+```
